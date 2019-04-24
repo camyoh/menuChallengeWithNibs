@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="menuChallengeWithNibs" customModuleProvider="target">
             <connections>
+                <outlet property="eventsTableView" destination="U13-xg-tLa" id="sg3-pj-Wvs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,20 +21,33 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFJ-sK-Mvw">
+                <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFJ-sK-Mvw">
                     <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="barTintColor" red="0.21451055999999999" green="0.2372913361" blue="0.26398897170000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </textAttributes>
                     <items>
                         <navigationItem title="Menu challenge" id="vuw-7R-stG">
-                            <barButtonItem key="leftBarButtonItem" title="Menu" id="foF-Ll-TZm"/>
+                            <barButtonItem key="leftBarButtonItem" title="Menu" image="menuIcon" id="foF-Ll-TZm">
+                                <connections>
+                                    <action selector="menuTapped:" destination="-1" id="BTT-dT-3Gc"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U13-xg-tLa">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U13-xg-tLa">
                     <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="1fn-vA-xMO"/>
+                        <outlet property="delegate" destination="-1" id="sTt-WD-sSy"/>
+                    </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.21451056003570557" green="0.23729133605957031" blue="0.26398897171020508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dFJ-sK-Mvw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="F8p-GK-efn"/>
                 <constraint firstItem="U13-xg-tLa" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PKH-5k-Iso"/>
@@ -47,4 +61,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </view>
     </objects>
+    <resources>
+        <image name="menuIcon" width="44" height="44"/>
+    </resources>
 </document>
